@@ -10,7 +10,7 @@ const DetalleEvento = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => { // `http://localhost:8082/examen/${eventId}`
-        fetch(`backendexamen-production-23a8.up.railway.app/examen/${eventId}`)
+        fetch(`https://backendexamen-production-23a8.up.railway.app/examen/${eventId}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

@@ -22,7 +22,7 @@ const EventoFormulario = () => {
   // Cargar datos del servidor si estamos en modo edición
   useEffect(() => {
     if (eventId) { // `http://localhost:8082/examen/${eventId}`
-      fetch(`backendexamen-production-23a8.up.railway.app/examen/${eventId}`)
+      fetch(`https://backendexamen-production-23a8.up.railway.app/examen/${eventId}`)
           .then((response) => {
             if (!response.ok) {
               throw new Error('Error al cargar los datos del evento');
@@ -55,7 +55,7 @@ const EventoFormulario = () => {
     // Si la clave es 'lugar', intentamos geocodificar la dirección
     if (name === 'lugar' && value.trim().length > 0) {
       const response = await fetch(
-          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(value)}`
+          `https://https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(value)}`
       );
       const data = await response.json();
       if (data && data.length > 0) {
@@ -79,7 +79,7 @@ const EventoFormulario = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const method = eventId ? 'PUT' : 'POST'; // http://localhost:8082
-    const url = `backendexamen-production-23a8.up.railway.app/examen${eventId ? `/${eventId}` : ''}`;
+    const url = `https://backendexamen-production-23a8.up.railway.app/examen${eventId ? `/${eventId}` : ''}`;
 
     const data = new FormData();
     data.append('nombre', formData.nombre);
