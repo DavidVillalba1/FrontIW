@@ -55,7 +55,7 @@ const EventoFormulario = () => {
     // Si la clave es 'lugar', intentamos geocodificar la dirección
     if (name === 'lugar' && value.trim().length > 0) {
       const response = await fetch(
-          `https://https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(value)}`
+          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(value)}`
       );
       const data = await response.json();
       if (data && data.length > 0) {
@@ -78,16 +78,16 @@ const EventoFormulario = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const method = eventId ? 'PUT' : 'POST'; // http://localhost:8082
+    const method = eventId ? 'PUT' : 'POST'; // 
     const url = `https://backendexamen-production-23a8.up.railway.app/examen${eventId ? `/${eventId}` : ''}`;
 
     const data = new FormData();
     data.append('nombre', formData.nombre);
     data.append('date', formData.date);
     data.append('lugar', formData.lugar);
-    data.append('map.latitud', formData.latitud);
-    data.append('map.longitud', formData.longitud);
-    data.append('map.zoom', formData.zoom);
+    data.append('map.latitud', formData.latitud || 0);
+    data.append('map.longitud', formData.longitud || 0);
+    data.append('map.zoom', formData.zoom || 2);
     data.append('email', formData.email);
     if (formData.image) {
       data.append('image', formData.image);
