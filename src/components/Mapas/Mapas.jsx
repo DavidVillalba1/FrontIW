@@ -24,7 +24,7 @@ const MapWithMarkers = () => {
     // Cargar los datos iniciales de los mapas
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:8082/examen/${user.email}`)
+            fetch(`https://backendexamen-production-23a8.up.railway.app/examen/${user.email}`)
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error("Error al obtener los datos");
@@ -35,7 +35,7 @@ const MapWithMarkers = () => {
                 .catch((error) => console.error(error));
 
             // Cargar las visitas del usuario
-            fetch(`http://localhost:8082/examen/visitas/${user.email}`)
+            fetch(`https://backendexamen-production-23a8.up.railway.app/examen/visitas/${user.email}`)
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error("Error al obtener las visitas");
@@ -107,7 +107,7 @@ const MapWithMarkers = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:8082/examen", {
+            const response = await fetch("https://backendexamen-production-23a8.up.railway.app/examen", {
                 method: "POST",
                 body: formData,
             });
