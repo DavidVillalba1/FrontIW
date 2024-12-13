@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login/Login.jsx';
-import Home from './components/Home/Home.jsx';
-import Formulario from './components/Formulario/Formulario.jsx';
-import Evento from './components/Eventos/DetalleEvento.jsx';
+import Mapas from './components/Mapas/Mapas.jsx';
+import MapasUsuario from './components/MapasUsuario/MapasUsuario.jsx';
 
 function App() {
 
@@ -10,11 +9,9 @@ function App() {
     <Router>
       <Routes>
 
-        <Route path="/" exact element={<Home />} />
-        <Route path="/login" exact element={<Login />} />
-        <Route path="/formulario" element={<Formulario/>} />
-        <Route path="/formulario/:eventId" element={<Formulario/>} />
-        <Route path="/evento/:eventId" element={<Evento/>} />
+        <Route path="/" exact element={<Login />} />
+        <Route path="/miMapa" exact element={<Mapas/>} />
+        <Route path="/mapas/:email" exact element={<MapasUsuario/>} />
         </Routes>
     </Router>
   );

@@ -14,7 +14,7 @@ const Header = () => {
         <div className="d-flex flex-wrap align-items-center justify-content-between">
           {/* Logo */}
           <div className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <Link to="/">
+            <Link to="/miMapa">
               <img
                 src="/src/images/logo-cropped.svg"
                 alt="Logo CityBeats"
@@ -28,7 +28,7 @@ const Header = () => {
           {/* Botones de Login y Logout */}
           <div className="d-flex flex-column flex-sm-row align-items-center">
             {!user ? (
-              <Link to="/login" className="mb-2 mb-sm-0 me-sm-2">
+              <Link to="/" className="mb-2 mb-sm-0 me-sm-2">
                 <Button variant="light">Iniciar Sesión</Button>
               </Link>
             ) : (

@@ -52,7 +52,7 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log('Inicio de sesión exitoso');
-      navigate('/'); // Redirigimos al Home después del inicio de sesión exitoso
+      navigate('/miMapa');
     } catch (error) {
       setAuthError('Correo o contraseña incorrectos.');
       console.error('Error de autenticación:', error);
@@ -77,7 +77,7 @@ const Login = () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       console.log('Cuenta creada exitosamente');
-      navigate('/'); // Redirigimos al Home después del registro exitoso
+      navigate('/miMapa');
     } catch (error) {
       setAuthError('Error al crear la cuenta.');
       console.error('Error de registro:', error);
@@ -89,7 +89,7 @@ const Login = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       console.log('Inicio de sesión con Google exitoso:', result.user);
-      navigate('/'); // Redirigimos al Home después del inicio de sesión con Google
+      navigate('/miMapa');
     } catch (error) {
       setAuthError('Error al iniciar sesión con Google.');
       console.error('Error de autenticación con Google:', error);
