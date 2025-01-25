@@ -16,8 +16,9 @@ const MapasUsuario = () => {
     // Cargar los datos del mapa según el email pasado en la URL
     useEffect(() => {
         if (email) {
-            //https://backendexamen-production-23a8.up.railway.app/examen/
-            fetch(`http://localhost:8082/examen/${email}`)
+            //https://exameniw-production.up.railway.app/examen/${email}
+            //http://localhost:8082/examen/${email}
+            fetch(`https://exameniw-production.up.railway.app/examen/${email}`)
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error("Error al obtener los datos");
@@ -34,8 +35,9 @@ const MapasUsuario = () => {
             visitaData.append('token', ''); // Suponemos que el token es una cadena vacía por ahora
             visitaData.append('date', new Date().toISOString()); // Fecha actual en formato ISO
 
-            //https://backendexamen-production-23a8.up.railway.app/examen/visitas
-            fetch("http://localhost:8082/examen/visitas", {
+            //https://exameniw-production.up.railway.app/examen/visitas
+            //http://localhost:8082/examen/visitas
+            fetch("https://exameniw-production.up.railway.app/examen/visitas", {
                 method: "POST",
                 body: visitaData, // Enviar como form-data
             })
@@ -48,8 +50,9 @@ const MapasUsuario = () => {
                 .catch((error) => console.error("Error al registrar visita:", error));
 
             // Cargar las visitas del autor
-            //https://backendexamen-production-23a8.up.railway.app/examen/visitas/${email}
-            fetch(`http://localhost:8082/examen/visitas/${email}`)
+            //https://exameniw-production.up.railway.app/examen/visitas/${email}
+            //http://localhost:8082/examen/visitas/${email}
+            fetch(`https://exameniw-production.up.railway.app/examen/visitas/${email}`)
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error("Error al obtener las visitas");
